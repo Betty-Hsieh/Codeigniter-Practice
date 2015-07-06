@@ -129,6 +129,12 @@
                           <input type="file" name="m_intro_file" accept="image/*">
                         </div>
                       </div>
+                      <div class="form-group">
+                        <label class="control-label col-lg-4">personal photo</label>
+                        <div class=" col-lg-4">
+                          <input type="file" name="personal_photo" accept="image/*">
+                        </div>
+                      </div>
                       <div class="form-actions no-margin-bottom">
                         <input type="submit" value="Validate" class="btn btn-primary">
                       </div>
