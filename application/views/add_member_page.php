@@ -132,7 +132,7 @@
                       <div class="form-group">
                         <label class="control-label col-lg-4">personal photo</label>
                         <div class=" col-lg-4">
-                          <input type="file" name="personal_photo" accept="image/*">
+                          <input type="file" name="personal_photo" class="personal_photo" accept="image/*">
                         </div>
                       </div>
                       <div class="form-actions no-margin-bottom">
@@ -574,9 +574,37 @@
     <!-- Metis demo scripts -->
     <script src="<?php echo URL_JS;?>app.js"></script>
     <script>
-      $(function() {
-        Metis.formGeneral();
-      });
+    $(function() {
+        //Metis.formGeneral();
+		$('.personal_photo').on("change",function(){
+			console.log('123');
+			var file_data = $(this).prop('files')[0];
+			var file_size=$(this).prop('files')[0].size;
+			var file_size_limit=3000000;
+			console.log('123');
+			if(file_size<file_size_limit){
+				console.log('456');
+				var fd = new FormData();
+					fd.append("personal_photo", file_data);
+	
+				$.ajax({
+					type: "POST",
+					url:"upload_personal_photo",
+					enctype: 'multipart/form-data',
+					data: fd,
+					processData: false,
+					contentType: false,
+					success: function (rep) {
+						var info = jQuery.parseJSON(rep);
+						console.log(rep);
+					}
+				});
+			}
+			else{
+				alert("不好意思，您的圖片檔案超過3M，請將在檔案縮小後再進行上傳。");
+			}
+		});
+    });
     </script>
     <script src="<?php echo URL_JS;?>style-switcher.min.js"></script>
   </body>

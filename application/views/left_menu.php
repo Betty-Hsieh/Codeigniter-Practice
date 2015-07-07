@@ -71,6 +71,25 @@
           </li>
           <li class="">
             <a href="javascript:;">
+              <i class="fa fa-pencil"></i>
+              <span class="link-title">
+            Product
+	  </span> 
+              <span class="fa arrow"></span> 
+            </a> 
+            <ul>
+              <li>
+                <a href="<?php echo URL; ?>product/product_list">
+                  <i class="fa fa-angle-right"></i>&nbsp; Product list</a> 
+              </li>
+              <li>
+                <a href="<?php echo URL; ?>product/add_product_page">
+                  <i class="fa fa-angle-right"></i>&nbsp; Add product</a> 
+              </li>
+            </ul>
+          </li>
+          <li class="">
+            <a href="javascript:;">
               <i class="fa fa-building "></i>
               <span class="link-title">Layouts</span> 
               <span class="fa arrow"></span> 
